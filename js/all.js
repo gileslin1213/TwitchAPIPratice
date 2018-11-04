@@ -4,35 +4,37 @@ var pagination;
 
 $(document).ready(function () {
   GetStream();
+  $('select').change(function (e) {
+    e.preventDefault();
+    game = $('#game').val();
+    language = $('#language').val();
+    if (game == 'undefined' && language == 'undefined') {
+      game = eval(game);
+      language = eval(language);
+    } else if (game == 'undefined') {
+      game = eval(game);
+    } else if (language == 'undefined') {
+      language = eval(language);
+    }
+   
+    $('#stream_here').empty();
+    pagination = undefined;
+    GetStream();
+  });
+  
+  $('#game').change(function (e) {
+    if(game == 'undefined'){
+      $('.title_icon_wrap').empty().append(
+        $('<i>').addClass('fab fa-twitch text-light')
+      )
+    }else{
+      GetStreamGame();
+    }
+  });
+  
+
 });
 
-$('select').change(function (e) {
-  e.preventDefault();
-  game = $('#game').val();
-  language = $('#language').val();
-  if (game == 'undefined' && language == 'undefined') {
-    game = eval(game);
-    language = eval(language);
-  } else if (game == 'undefined') {
-    game = eval(game);
-  } else if (language == 'undefined') {
-    language = eval(language);
-  }
- 
-  $('#stream_here').empty();
-  pagination = undefined;
-  GetStream();
-});
-
-$('#game').change(function (e) {
-  if(game == 'undefined'){
-    $('.title_icon_wrap').empty().append(
-      $('<i>').addClass('fab fa-twitch text-light')
-    )
-  }else{
-    GetStreamGame();
-  }
-});
 
 
 
