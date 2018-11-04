@@ -1,3 +1,84 @@
 @import '../node_modules/bootstrap/scss/functions';
 @import 'helpers/variables';
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+
+.bg-primary{
+  background: linear-gradient(0deg,#17141f 30%,rgba(23,20,31,0.3) 50%,rgba(23,20,31,0.0) 70%);
+}
+.title_icon_wrap{
+  margin-bottom: 0.5rem;
+  i{
+    font-size: 173px;
+    text-shadow: -5px 3px 10px black;
+  }
+  img{
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.34),0 1px 8px -3px rgba(0,0,0,.26),0 2px 16px 0 rgba(0,0,0,.28);
+  }
+}
+
+.stream_card_wrap{
+  display: block;
+  margin-bottom: 30px;
+  &:hover{
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.34),0 1px 8px -3px rgba(0,0,0,.26),0 2px 16px 0 rgba(0,0,0,.28);
+    position: relative;
+    &::after{
+    content: '';  
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.1);
+  }
+  }
+  
+  .stream_card_img_wrap{
+    position: relative;
+    &::after{
+      content: '';
+      height: 30%;     
+      position: absolute;
+      bottom: -0.6px;
+      left: -0.01px;
+      right:-0.02px;
+      background:linear-gradient(0deg,rgba(00,00,00,0.9) 0,rgba(00,00,00,0) 100%);
+    }
+    img{
+      width: 100%;
+      max-width: 100%;
+    }
+    p{
+      margin-bottom: 0;
+      left:0.5em;
+      bottom: 0.5em;
+      color: white;
+      z-index: 2;
+    }
+  }
+  .stream_card_user_wrap{
+    img{
+      float: left;
+    }
+    %stream_card_user{
+      float: right;
+      width: calc(100% - 50px - 1rem);
+      text-overflow:ellipsis;
+      white-space: nowrap; 
+      overflow: hidden;
+    }
+    .stream_card_user_title{
+      @extend %stream_card_user;
+      
+    }
+    .stream_card_user_name{
+      font-size: 0.8rem;
+      @extend %stream_card_user;
+     
+    }
+  }
+}
+#streams{
+  min-height: 100vh;
+}

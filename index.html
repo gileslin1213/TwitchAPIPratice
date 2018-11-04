@@ -1,29 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="/dist/css/all.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/all.min.css">
 </head>
+
 <body>
-    <p>
-        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-          Link with href
-        </a>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-          Button with data-target
-        </button>
-      </p>
-      <div class="collapse" id="collapseExample">
-        <div class="card card-body">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  <section class="bg-primary">
+    <div class="container py-4">
+      <div class="row align-items-center justify-content-center flex-column">
+          <div class="title_icon_wrap">
+              <i class="fab fa-twitch text-light"></i>
+            </div>
+        <div class="text-center">
+          <h1 class="text-light text-monospace">TwitchAPIPratice</h1>
+          <h3 class="text-light d-inline mr-2">遊戲</h3>
+          <select id="game">
+            <option value="undefined">ALL</option>
+            <option value="21779">league of legends</option>
+            <option value="493057">pubg</option>
+            <option value="509658">chating</option>
+          </select>
+          <h3 class="text-light d-inline mr-2">語言</h3>
+          <select id="language">
+            <option value="undefined">ALL</option>
+            <option value="zh-tw">中文</option>
+            <option value="en">英文</option>
+          </select>
         </div>
+        
       </div>
+    </div>
+  </section>
+  <section id="streams" class="bg-secondary py-4">
+    <div class="container">
+      <div class="row" id="stream_here">
+        
+      </div>
+    </div>
+  </section>
 
-
-
-<script src="dist/js/index.bundle.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+  <script src="js/all.js"></script>
 </body>
+
 </html>
