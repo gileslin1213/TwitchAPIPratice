@@ -25,7 +25,7 @@ $('select').change(function (e) {
 });
 
 $('#game').change(function (e) {
-  if(game == 'undefined'){
+  if(game == undefined){
     $('.title_icon_wrap').empty().append(
       $('<i>').addClass('fab fa-twitch text-light')
     )
