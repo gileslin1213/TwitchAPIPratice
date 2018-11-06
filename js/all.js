@@ -69,7 +69,7 @@ function GetStream() {
         var link = 'https://www.twitch.tv/' + user_name;
         var user_id = valueOfElement.user_id;
         var stream_card =
-          $('<div>').addClass('col-4').append(
+          $('<div>').addClass('col-12 col-md-6 col-lg-4').append(
             $('<a>').attr('href', link).addClass('stream_card_wrap').append(
               $('<div>').addClass('stream_card_img_wrap').append([
                 $('<img src="' + thumbnail_url + '">'),
