@@ -143,7 +143,7 @@ scope:"user:read:email" },
     success: function (data) {
       token = data.access_token
     }
-  }
+  })
   return token
 }
 console.log(getToken)
