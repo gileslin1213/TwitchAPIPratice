@@ -51,7 +51,7 @@ function GetStream() {
   $.ajax({
     type: "GET",
     url: "https://api.twitch.tv/helix/streams",
-    headers: { 'Client-ID': 'nykxj742gwdpflmj32jzltnv4u4ctt' },
+    headers: { 'Client-ID': 'nykxj742gwdpflmj32jzltnv4u4ctt','Authentication': 'Bearer bz5rt09bwcko1grkttet6vbvnrl11' },
     data: {
       "game_id": game,
       "language": language,
