@@ -130,4 +130,20 @@ function GetStreamGame() {
       
     }
   });
+  var getToken = function(){
+    let token;
+    $.ajax({
+    type: "get",
+    url: "https://api.twitch.tv/helix/token",
+    data: { client_id:nykxj742gwdpflmj32jzltnv4u4ctt,
+client_secret:i39uhjomibzfl0z2vxhm1qivmyko27,
+grant_type:client_credentials,
+scope:user:read:email },
+    dataType: "json",
+    success: function (data) {
+      token = data.access_token
+    }
+  }
+  return token
 }
+console.log(getToken)
