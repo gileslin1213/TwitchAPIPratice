@@ -18,18 +18,18 @@ $('select').change(function (e) {
   } else if (language == 'undefined') {
     language = eval(language);
   }
- 
+
   $('#stream_here').empty();
   pagination = undefined;
   GetStream();
 });
 
 $('#game').change(function (e) {
-  if(game == undefined){
+  if (game == undefined) {
     $('.title_icon_wrap').empty().append(
       $('<i>').addClass('fab fa-twitch text-light')
     )
-  }else{
+  } else {
     GetStreamGame();
   }
 });
@@ -51,7 +51,7 @@ function GetStream() {
   $.ajax({
     type: "GET",
     url: "https://api.twitch.tv/helix/streams",
-    headers: { 'Client-ID': 'nykxj742gwdpflmj32jzltnv4u4ctt','Authentication': 'Bearer bz5rt09bwcko1grkttet6vbvnrl11' },
+    headers: { 'Client-ID': 'nykxj742gwdpflmj32jzltnv4u4ctt', 'Authentication': 'Bearer bz5rt09bwcko1grkttet6vbvnrl11' },
     data: {
       "game_id": game,
       "language": language,
@@ -121,24 +121,26 @@ function GetStreamGame() {
     dataType: "json",
     success: function (data) {
       console.log(data.data[0].box_art_url);
-      
-      var link =data.data[0].box_art_url.replace("{width}x{height}", "130x173")
-      
+
+      var link = data.data[0].box_art_url.replace("{width}x{height}", "130x173")
+
       $('.title_icon_wrap').empty().append(
-        $('<img>').attr('src',link)
+        $('<img>').attr('src', link)
       )
-      
     }
   });
-  var getToken = function(){
-    let token;
-    $.ajax({
-    type: "get",
+}
+var getToken = function () {
+  let token;
+  $.ajax({
+    type: "post",
     url: "https://api.twitch.tv/helix/token",
-    data: { client_id:"nykxj742gwdpflmj32jzltnv4u4ctt",
-client_secret:"i39uhjomibzfl0z2vxhm1qivmyko27",
-grant_type:"client_credentials",
-scope:"user:read:email" },
+    data: {
+      client_id: "nykxj742gwdpflmj32jzltnv4u4ctt",
+      client_secret: "i39uhjomibzfl0z2vxhm1qivmyko27",
+      grant_type: "client_credentials",
+      scope: "user:read:email"
+    },
     dataType: "json",
     success: function (data) {
       token = data.access_token
@@ -146,4 +148,5 @@ scope:"user:read:email" },
   })
   return token
 }
-console.log(getToken)
+let a = getToken();
+console.log(a)
